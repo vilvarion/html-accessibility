@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><input/> + <datalist> - simple native autocomplete</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+<header>
+  <h1>&lt;input/&gt; + &lt;datalist&gt; - simple native autocomplete</h1>
+</header>
+
+<main>
+  <!-- ////////////////////////////////////// -->
+
+  <style>
+      datalist {
+          /*display: block;*/
+      }
+  </style>
+
+  <label for="browser">Choose your browser from the list:</label>
+  <input list="browsers" id="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li></li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>: </li>
+      <li><b>Firefox</b>: Needs double click to show the list. Autocomplete looks like a standard browser feature.</li>
+      <li><b>Edge</b>: </li>
+      <li><b>Safari</b>: </li>
+      <li><b>Safari iOS</b>: </li>
+      <li><b>Android</b>: </li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>

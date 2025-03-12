@@ -1,2 +1,2 @@
 # html-accessibility
-A collection of modern HTML constructions, including accessibility and styling practices
+A collection of modern HTML practices, including accessibility and styling

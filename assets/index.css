@@ -1,0 +1,59 @@
+:root {
+
+}
+
+body {
+    padding: 1rem;
+    background: #e2e6e9;
+}
+
+
+nav {
+
+}
+
+h1 {
+    font-weight: 300;
+    margin-top: 0;
+}
+
+menu {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+
+    list-style: none;
+
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.tag {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-family: monospace;
+
+    &::before {
+        content: "<";
+    }
+
+    &::after {
+        content: ">";
+    }
+}
+
+
+#exemplar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 270px;
+    border: 0;
+    background: #f2f2f2;
+    width: calc(100% - 270px);
+    height: 100%;
+}

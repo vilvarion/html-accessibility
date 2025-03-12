@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+
+<header>
+  <h1>&lt;input type="date"/&gt;</h1>
+  <h2>Native date selector (single date only)</h2>
+</header>
+<main>
+<!-- ////////////////////////////////////// -->
+
+  <style>
+      #dateInput {
+          /*appearance: none;*/
+          /*border: none;*/
+      }
+  </style>
+
+  <label for="dateInput">Check-in date:</label>
+  <input id="dateInput" type="date" />
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li>Can be added a custom <button onclick="dateInput.showPicker()">button</button> that will open the calendar.</li>
+      <li>Add <code>cursor: pointer;</code> to <code>&lt;button&gt;</code> or <code>&lt;input/&gt;</code></li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>: </li>
+      <li><b>Firefox</b>: Does not show a caret cursor over input, looks confusing.</li>
+      <li><b>Edge</b>: </li>
+      <li><b>Safari</b>: </li>
+      <li><b>Safari iOS</b>: </li>
+      <li><b>Android</b>: </li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>
