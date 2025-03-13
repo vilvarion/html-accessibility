@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dialog</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+<header>
+  <h1>&lt;dialog&gt;</h1>
+  <h2>native customizable modals</h2>
+</header>
+
+<main>
+  <!-- ////////////////////////////////////// -->
+
+  <style>
+      /* Style the dialog */
+      .styling {
+          width: 400px;
+          padding: 20px;
+          border: none;
+          border-radius: 5px;
+          background: rgba(255, 255, 255, 0.95);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          font-size: 16px;
+          font-family: sans-serif;
+
+          header {
+              font-size: 20px;
+              font-weight: bold;
+              margin-bottom: 10px;
+          }
+
+          button {
+              font-size: 16px;
+              border: 0;
+              border-radius: 5px;
+              padding: 10px;
+              margin: 20px 10px 0;
+              cursor: pointer;
+
+              &:hover {
+                  opacity: .9;
+              }
+
+              &[value="confirm"] {
+                  background-color: #a0cadc;
+              }
+          }
+      }
+
+      /* Show animation */
+      .styling[open] {
+          animation: dialogTransitionIn 0.35s ease normal;
+      }
+
+      /* Backdrop styling */
+      .styling::backdrop {
+          background: rgba(0, 20, 40, 0.5);
+          backdrop-filter: blur(3px);
+      }
+
+      @keyframes dialogTransitionIn {
+          from {
+              opacity: 0;
+              transform: scale(0.8);
+          }
+          to {
+              opacity: 1;
+              transform: scale(1);
+          }
+      }
+  </style>
+
+  <button id="dialogUnstyled">show unstyled</button>
+  <button id="dialogStyled">show styled</button>
+
+  <dialog id="dialogWindow" class="styling">
+    <form method="dialog">
+      <header>Are you sure?</header>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit?
+      <button value="cancel" formmethod="dialog">Negative</button>
+      <button value="confirm" formmethod="dialog">Positive</button>
+    </form>
+  </dialog>
+
+  <script>
+    const btnUnstyled = document.getElementById('dialogUnstyled');
+    const btnStyled = document.getElementById('dialogStyled');
+    const dialog = document.getElementById('dialogWindow')
+
+    btnUnstyled.addEventListener("click", () => {
+      dialog.classList.remove('styling')
+      dialog.showModal();
+    });
+
+    btnStyled.addEventListener("click", () => {
+      dialog.classList.add('styling');
+      dialog.showModal();
+    });
+  </script>
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li>Possible to assign "open" attribute to show it. Can be done in react <code>open={true|false}</code>. No backdrop with this attribute.</li>
+      <li><code>.showModal()</code> adds a backdrop and ESC button is closing it.</li>
+      <li>Use <code>@keyframes</code> animation instead of <code>transition</code>.</li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>: looks awful unstyled</li>
+      <li><b>Firefox</b>: same</li>
+      <li><b>Edge</b>: same</li>
+      <li><b>Safari</b>: same</li>
+      <li><b>Safari iOS</b>: same</li>
+      <li><b>Android</b>: same</li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>

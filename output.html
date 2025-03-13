@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&lt;output&gt;</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+
+<header>
+  <h1>&lt;output&gt;</h1>
+  <h2>Native data binding inside &lt;form&gt;</h2>
+</header>
+<main>
+  <!-- ////////////////////////////////////// -->
+
+  <form id="bookingForm" oninput="total.value=parseInt(roomType.value)*parseInt(daysStaying.value)">
+    <p>
+      <label for="roomType">Select room type:</label>
+      <select id="roomType">
+        <option value="40">$40 Budget</option>
+        <option value="60" selected>$60 Standard</option>
+        <option value="80">$80 Deluxe</option>
+      </select>
+    </p>
+    <p>
+      <label for="daysStaying">Days staying:</label>
+      <input type="number" min="1" id="daysStaying" value="2">
+    </p>
+
+    <p>Total: $<output name="total" for="roomType daysStaying"></output></p>
+  </form>
+
+  <script>
+    document.getElementById('bookingForm').oninput();
+  </script>
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li>Does not render calculation on page load. Use <code>.oninput()</code> to trigger it.</li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>: Shows calendar icon</li>
+      <li><b>Firefox</b>: Does not show a caret cursor over input, looks confusing.</li>
+      <li><b>Edge</b>: </li>
+      <li><b>Safari</b>: Does not show calendar icon</li>
+      <li><b>Safari iOS</b>: Does not show calendar icon</li>
+      <li><b>Android</b>: </li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>

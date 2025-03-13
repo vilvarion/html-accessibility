@@ -43,6 +43,10 @@ menu {
     &::after {
         content: ">";
     }
+
+    &:visited {
+        color: #7f4ed6;
+    }
 }
 
 
