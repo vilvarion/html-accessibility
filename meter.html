@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&lt;meter&gt;</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+<header>
+  <h1>&lt;meter&gt;</h1>
+  <h2>Native bar indicator (not progress)</h2>
+</header>
+
+<main>
+  <!-- ////////////////////////////////////// -->
+
+  <p>
+    <label for="disk-space">Disk usage: </label>
+    <meter id="disk-space" value="61" optimum="50" min="0" max="100">61%</meter>
+  </p>
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li>Changing <code>border-radius</code> turns it to Windows 7 gradient style indicator.</li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>: height is appearing twice smaller than other browsers!</li>
+      <li><b>Firefox</b>:</li>
+      <li><b>Edge</b>: </li>
+      <li><b>Safari</b>: the bar looks very different from other browsers</li>
+      <li><b>Safari iOS</b>:
+      <li><b>Android</b>: </li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>

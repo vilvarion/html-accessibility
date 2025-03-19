@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&lt;progress&gt;</title>
+  <link rel="stylesheet" href="assets/exemplar.css">
+</head>
+<body>
+
+<header>
+  <h1>&lt;progress&gt;</h1>
+  <h2>Native progress indicator</h2>
+</header>
+
+<main>
+  <!-- ////////////////////////////////////// -->
+
+  <p>
+    <label for="video-progress">Processing the video</label>
+    <progress id="video-progress"
+              aria-busy="false" aria-polite="off"
+              role="status" value="11" max="100">11%</progress>
+
+    <br/>
+    <br/>
+    <br/>
+    <button id="test">fake progress</button>
+  </p>
+
+  <!-- ////////////////////////////////////// -->
+</main>
+
+<script>
+  const button = document.querySelector('button');
+  const progress = document.querySelector('progress');
+
+  button.addEventListener('click', () => {
+    progress.focus();
+    progress.setAttribute('aria-busy', true);
+    progress.setAttribute('aria-live', "polite");
+    progress.value = 0;
+    setTimeout(() => {
+      progress.value = 15;
+    }, 100)
+    setTimeout(() => {
+      progress.value = 60;
+    }, 500)
+    setTimeout(() => {
+      progress.value = 90;
+    }, 1000)
+    setTimeout(() => {
+      progress.value = 100;
+      progress.setAttribute('aria-busy', false);
+      progress.setAttribute('aria-live', "off");
+    }, 1400)
+  });
+</script>
+
+
+<section role="contentinfo">
+  <article>
+    <h2>Styling tips:</h2>
+    <ul>
+      <li>Setting <code>border-radius: 0;</code> changes the initial design completely.</li>
+      <li>Setting <code>border: 0;</code> changes the initial design once again.</li>
+      <li>Needs aria attributes!</li>
+    </ul>
+  </article>
+  <article>
+    <h2>Browser test:</h2>
+    <ul>
+      <li><b>Chrome</b>:</li>
+      <li><b>Firefox</b>:</li>
+      <li><b>Edge</b>: </li>
+      <li><b>Safari</b>: looks nice by default</li>
+      <li><b>Safari iOS</b>:
+      <li><b>Android</b>: </li>
+    </ul>
+  </article>
+</section>
+
+</body>
+</html>
